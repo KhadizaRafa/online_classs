@@ -1,0 +1,18 @@
+.cart-style{
+    margin-left: 20px;
+    border: 1px solid lightgrey;
+    width: 300px;
+    margin: 20px;
+    /* padding:10px 70px; */
+    border-radius: 10px;
+    text-align: center;
+
+  }
+
+  .cart-style h5,h6{
+  
+   border-bottom: 5px solid #282c34;
+   padding: 15px;
+   
+
+}

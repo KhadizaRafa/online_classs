@@ -1,0 +1,10 @@
+.course-list{
+    box-shadow: 10px 10px 10px grey;
+    width: '100%';
+    margin : 20px 10px;
+}
+
+Col{
+    border-right: 1px shadow lightgrey;
+}
+

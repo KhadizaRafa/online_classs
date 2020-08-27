@@ -1,25 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React ,{ useState } from 'react';
 import './App.css';
+import course from './Data/course.js';
+// or less ideally
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import CourseCart from './Components/CourseCart/CourseCart'
+import Banner from './Components/Banner/Banner'
+import UserCart from './Components/UserCart/UserCart'
+
 
 function App() {
+  const Courses = course;
+  const [userCourseCount,setUserCouses] = useState([]);
+
+  const handleEnrollCount = (userAddedCourse)=> {
+      const newCourse = [...userCourseCount,userAddedCourse];
+      setUserCouses(newCourse);
+  }
+  
+
+  // const [price,setPrice] = useState(0);
+  // const handlePrice = ()=>
+  // {
+  //   console.log('updated price')
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Banner></Banner>
+      <div  className="course-container">
+      <Container>
+        <Row>
+        {Courses.map(course => <CourseCart course={course} key={course.id} handleEnrollCount={handleEnrollCount}></CourseCart> )}   
+        </Row>
+      </Container> 
+
+      <div>
+          <UserCart userCourse={userCourseCount}></UserCart>
+      </div>
+      </div>
+      
     </div>
+    
+       
+
   );
 }
 
