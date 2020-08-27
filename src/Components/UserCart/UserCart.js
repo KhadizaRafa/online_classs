@@ -12,7 +12,7 @@ const UserCart = (props) => {
     if(total>=1000){
         discount = 40;
     }
-    else if(total>5000)
+    else if(total>500)
     {
         discount = 20;
     }
